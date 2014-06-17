@@ -252,15 +252,16 @@ function deleteAllCookies() {
 				  	var obj = user.get("ingredient").split(",");
 				  	for(var i=0; i<obj.length; i=i+2){
 				  		//console.log( (parseInt(obj[i],10)) );
-				  		console.log("obj" + obj[i] );
-                        $('#refrigerator').append('<div class="box" value='+obj[i]+'>'+obj[i]+"</div>");
-				  	}
 
-                    for(var j=1;j<obj.length; j=j+2){
-                        if(obj[j] <= Year+Month+Day){
-                            console.log("Fuck yeah!")
+                        if(obj[i] <= Year+Month+Day){
+                            $('#refrigerator').append('<div class="box_red" style="background:red" value='+obj[i]+'>'+obj[i]+"</div>");
+
                         }
-                    }
+                        else{
+				  		    console.log("obj" + obj[i] );
+                            $('#refrigerator').append('<div class="box" value='+obj[i]+'>'+obj[i]+"</div>");
+                        }
+				  	}
 				  	
 				  },
 				  error: function( object ,error) {
@@ -271,7 +272,6 @@ function deleteAllCookies() {
 				
 			}
 //		</script>
-
 
 //LOAD FACEBOOK SDK ASYNC，這是基本的東西，應該不用多說了吧
 (function (d, s, id) {
