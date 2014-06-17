@@ -254,7 +254,7 @@ function deleteAllCookies() {
 				  		//console.log( (parseInt(obj[i],10)) );
 
                         if(obj[i] <= Year+Month+Day){
-                            $('#refrigerator').append('<div class="box_red" style="background:red" value='+obj[i-1]+'>'+obj[i-1]+"</div>");
+                            $('#refrigerator').append('<div class="box_red" value='+obj[i-1]+'>'+obj[i-1]+"</div>");
                             console.log("FUCK YEAH!")
                         }
                         else{

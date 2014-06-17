@@ -236,6 +236,15 @@ footer {
     font-size: 20px; 
 }
 
+.box_red{
+    margin: 5px;
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+    font-size: 20px; 
+    background: red;
+}
+
 .gsc-input{
     display: none;
 }
