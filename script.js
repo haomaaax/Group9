@@ -1,6 +1,6 @@
 // JavaScript Document
 
-Parse.initialize("wfsQ2jK7uRpaJJjX4C3zhTvDXlzpVbkpGOrVIFdJ", "6IRXG0BIzE5ToEHOYh3HGjaXrNiU7HaG5Repvte0");
+Parse.initialize("NpaoKbfksSBd1em09tzts69c38vCnM4osjENtCDw", "UkJRGQzv5cZ8VtzGF6fBblk8NFSZvwUgzqhWt836");
 
 window.fbAsyncInit = function () {
     
