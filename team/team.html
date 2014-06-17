@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<title>Responsive Retina-Friendly Menu</title>
+		<meta name="description" content="Responsive Retina-Friendly Menu with different, size-dependent layouts" />
+		<meta name="keywords" content="responsive menu, retina-ready, icon font, media queries, css3, transition, mobile" />
+		<meta name="author" content="Codrops" />
+		<link rel="shortcut icon" href="../favicon.ico"> 
+		<link rel="stylesheet" type="text/css" href="css/default.css" />
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		<script src="js/modernizr.custom.js"></script>
+        
+   <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+   <link rel="stylesheet" href="../apply/fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+   <script type="text/javascript" src="../apply/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+   
+	</head>
+    
+<script type="text/javascript">
+	$(document).ready(function() {
+	
+		$('.fancybox').fancybox({
+            padding:0, margin:0 ,background: 'none',
+    		'type': 'iframe', 
+    		'scrolling': 'no',  
+    		'iframe': {'scrolling': 'no'}
+		});	
+        
+        
+	});  
+//	$(function(){
+//	  $.scrollIt();
+//	});
+  </script>
+	<body>
+		<div class="container">	
+
+			<div class="logo">
+            <a href="../index/index.html"><img alt="logo" class="icon-logo" src="./images/logo3.jpg"></a>
+			</div>
+			<div class="main clearfix">
+				<nav id="menu" class="nav">					
+
+                    <ul>
+						<li>
+							<a href="../index/index.html">
+								<span class="icon">
+									<i aria-hidden="true" class="icon-home"></i>
+								</span>
+								<span>Home</span>
+							</a>
+						</li>
+						<li>
+							<a href="../concept/concept.html">
+								<span class="icon"> 
+									<i aria-hidden="true" class="icon-services"></i>
+								</span>
+								<span>Concept</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<span class="icon">
+									<i aria-hidden="true" class="icon-portfolio"></i>
+								</span>
+								<span>Our team </span>
+							</a>
+						</li>
+						<li>
+							<a href="../recipe/recipe.html">
+								<span class="icon">
+									<i aria-hidden="true" class="icon-blog"></i>
+								</span>
+								<span>My Recipe</span>
+							</a>
+						</li>
+						<li>
+							<a class="fancybox fancybox.iframe"  href="../Login.html"  >
+								<span class="icon">
+									<i aria-hidden="true" class="icon-team"></i>
+								</span>
+								<span>Log in</span>
+							</a>
+						</li>
+						<li>
+							<a href="mailto:99703028@nccu.edu.tw">
+								<span class="icon">
+									<i aria-hidden="true" class="icon-contact"></i>
+								</span>
+								<span>Contact</span>
+							</a>
+						</li>
+					</ul>
+				</nav>
+                <div class="detail">
+                <h1>製作團隊</h1>
+				<p>#{Group 9 web專案} FOOD盡其用</p>
+                    </div>
+                <div class="hum">
+                <img class="photo" src="./images/p1.jpg">
+                    <p>葉柏雅<br><br>政治大學<br>心理四<br><br><br></p>
+                      </div>
+                <div class="hum">
+                    <img class="photo" src="./images/p2.jpg">
+                    <p>陳志豪<br><br>政治大學<br>資科四<br><br><br></p>
+                    </div>
+                
+                <div class="hum">
+                    <img class="photo" src="./images/p3.jpg">
+                    <p>曾紀昀<br><br>政治大學<br>經濟四<br>數位學程<br><br><br></p>
+                    </div>
+                
+                <div class="hum">
+                    <img class="photo" src="./images/p4.jpg">
+                    <p>游佳霖<br><br>政治大學<br>資科三<br>數位學程<br><br><br></p>
+                    </div>
+                
+                <div class="hum">
+                    <img class="photo" src="./images/p5.jpg">
+                    <p>黃彥庭<br><br>政治大學<br>資科三<br><br><br><br></p>
+                    </div>
+                    
+              
+                
+                <br><br>
+                
+			</div>
+		</div><!-- /container -->
+		<script>
+			//  The function to change the class
+			var changeClass = function (r,className1,className2) {
+				var regex = new RegExp("(?:^|\\s+)" + className1 + "(?:\\s+|$)");
+				if( regex.test(r.className) ) {
+					r.className = r.className.replace(regex,' '+className2+' ');
+			    }
+			    else{
+					r.className = r.className.replace(new RegExp("(?:^|\\s+)" + className2 + "(?:\\s+|$)"),' '+className1+' ');
+			    }
+			    return r.className;
+			};	
+
+			//  Creating our button in JS for smaller screens
+			var menuElements = document.getElementById('menu');
+			menuElements.insertAdjacentHTML('afterBegin','<button type="button" id="menutoggle" class="navtoogle" aria-hidden="true"><i aria-hidden="true" class="icon-menu"> </i> Menu</button>');
+
+			//  Toggle the class on click to show / hide the menu
+			document.getElementById('menutoggle').onclick = function() {
+				changeClass(this, 'navtoogle active', 'navtoogle');
+			}
+
+			// http://tympanus.net/codrops/2013/05/08/responsive-retina-ready-menu/comment-page-2/#comment-438918
+			document.onclick = function(e) {
+				var mobileButton = document.getElementById('menutoggle'),
+					buttonStyle =  mobileButton.currentStyle ? mobileButton.currentStyle.display : getComputedStyle(mobileButton, null).display;
+
+				if(buttonStyle === 'block' && e.target !== mobileButton && new RegExp(' ' + 'active' + ' ').test(' ' + mobileButton.className + ' ')) {
+					changeClass(mobileButton, 'navtoogle active', 'navtoogle');
+				}
+			}
+		</script>
+            <footer>
+        <hr>
+        NCCU CS Web G9 &copy; 2014 All Rights Reserved<br><br>
+        </footer>
+	</body>
+
+</html>

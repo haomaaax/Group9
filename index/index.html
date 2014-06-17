@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+        
+        <meta property="og:title" content="All About Food" >
+        <meta property="og:type" content="website" >
+        <meta property="og:url" content="http://chialinyu.github.io/G9/AllAboutFood/index/index.html" >
+        <meta property="og:image" content="http://chialinyu.github.io/G9/AllAboutFood/index/images/logo3.jpg" >
+        
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<title>All About Food</title>
+		<meta name="description" content="Multi-Level Push Menu: Off-screen navigation with multiple levels" />
+		<meta name="keywords" content="multi-level, menu, navigation, off-canvas, off-screen, mobile, levels, nested, transform" />
+		<meta name="author" content="Codrops" />
+		<link rel="shortcut icon" href="../favicon.ico">
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/icons.css" />
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		<link rel="stylesheet" type="text/css" href="css/default_nav.css" />
+		<link rel="stylesheet" type="text/css" href="css/component_nav.css" />
+        <link rel="stylesheet" type="text/css" href="css/googlesearch.css" />
+        
+		<script src="js/modernizr.nav.js"></script>
+		<script src="js/modernizr.push.js"></script>
+        <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.2.18.min.js"></script>
+		
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<!--           <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>-->
+   <link rel="stylesheet" href="../apply/fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+   <script type="text/javascript" src="../apply/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+        
+	</head>
+    
+<script type="text/javascript">
+	$(document).ready(function() {
+
+	
+		$('.fancybox').fancybox({
+            padding:0, margin:0 ,background: 'none',
+    		'type': 'inline', //change from iframe
+    		'scrolling': 'no',
+//            "width":400,"height":300,
+            'afterClosed': function(){
+                parent.location.reload(true); 
+                 $.fancybox.close();
+            },
+//    		'iframe': {'scrolling': 'no'}
+		});	
+        
+        
+        
+	});  
+    
+  </script>
+	
+	<body>	
+		<div class="container">
+			
+			<!-- Push Wrapper -->
+			<div class="mp-pusher" id="mp-pusher">
+				
+				<nav id="menu" class="nav">
+
+                    <ul>
+						<li>
+							<a href="#">
+								<span class="icon_nav icon">
+									<i aria-hidden="true" class="icon-home"></i>
+								</span>
+								<span>Home</span>
+							</a>
+						</li>
+						<li>
+							<a href="../concept/concept.html">
+								<span class="icon_nav icon"> 
+									<i aria-hidden="true" class="icon-services"></i>
+								</span>
+								<span>Concept</span>
+							</a>
+						</li>
+						<li>
+							<a href="../team/team.html">
+								<span class="icon_nav icon">
+									<i aria-hidden="true" class="icon-portfolio"></i>
+								</span>
+								<span>Our team </span>
+							</a>
+						</li>
+						<li>
+							<a href="../recipe/recipe.html">
+								<span class="icon_nav icon">
+									<i aria-hidden="true" class="icon-blog"></i>
+								</span>
+								<span>My Recipe</span>
+							</a>
+						</li>
+						<li>
+<!--							<a class="fancybox fancybox.iframe"  href="../Login.html"  >-->
+                            <a class="fancybox"  href="#LoginPage"  >    
+								<span class="icon_nav icon">
+									<i aria-hidden="true" class="icon-team"></i>
+								</span>
+								<span>Log in</span>
+							</a>
+						</li>
+						<li>
+							<a href="mailto:99703028@nccu.edu.tw">
+								<span class="icon_nav icon">
+									<i aria-hidden="true" class="icon-contact"></i>
+								</span>
+								<span>Contact</span>
+							</a>
+						</li>
+					</ul>
+				</nav>
+
+		        <div class="logo"><a href="#"><img alt="logo" class="icon-logo" src="./images/logo3.jpg"></a></div>
+				
+				
+				<!-- mp-menu -->
+				<nav id="mp-menu" class="mp-menu">
+					
+					<div class="mp-level">
+						<h2 class="icon icon-food">All About Food</h2>
+						<ul>
+							<li class="icon icon-arrow-left">
+								<a href="#">穀物類</a>
+								<div class="mp-level">
+									<h2>穀物類</h2>
+									<a class="mp-back" href="#">back</a>
+									<ul>
+										<li class="icon icon-arrow-left">
+											<a href="#">麵食類</a>
+											<div class="mp-level">
+												<h2>麵食類</h2>
+												<a class="mp-back" href="#">back</a>
+												<ul class="Ingredient">
+													<li><a href="#">細麵</a></li>
+													<li><a href="#">粄條</a></li>
+													<li><a href="#">烏龍麵</a></li>
+													<li><a href="#">拉麵</a></li>
+                                                    <li><a href="#">冬粉</a></li>
+                                                    <li><a href="#">河粉</a></li>
+												</ul>
+											</div>
+										</li>
+										<li class="icon icon-arrow-left">
+											<a href="#">米飯類</a>
+											<div class="mp-level">
+												<h2>米飯類</h2>
+												<a class="mp-back" href="#">back</a>
+												<ul class="Ingredient">
+													<li><a href="#">飯</a></li>
+													<li><a href="#">糙米</a></li>
+													<li><a href="#">胚芽米</a></li>
+													<li><a href="#">紫米飯</a></li>
+													<li><a href="#">五穀米</a></li>
+												</ul>
+											</div>
+										</li>
+										<li class="icon icon-arrow-left">
+											<a href="#">根莖類</a>
+											<div class="mp-level">
+												<h2>根莖類</h2>
+												<a class="mp-back" href="#">back</a>
+												<ul class="Ingredient">
+													<li><a href="#">芋頭</a></li>
+													<li><a href="#">玉米</a></li>
+													<li><a href="#">地瓜</a></li>
+													<li><a href="#">馬鈴薯</a></li>
+												</ul>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li class="icon icon-arrow-left">
+								<a href="#">肉類</a>
+								<div class="mp-level">
+									<h2>肉類</h2>
+									<a class="mp-back" href="#">back</a>
+									<ul class="Ingredient">
+										<li><a href="#">豬肉</a></li>
+										<li><a href="#">牛肉</a></li>
+										<li><a href="#">羊肉</a></li>
+										<li><a href="#">雞肉</a></li>
+										<li><a href="#">魚</a></li>
+									</ul>
+								</div>
+							</li>
+							<li class="icon icon-arrow-left">
+								<a href="#">蔬菜類</a>
+								<div class="mp-level">
+									<h2>蔬菜類</h2>
+									<a class="mp-back" href="#">back</a>
+									<ul class="Ingredient">
+										<li><a href="#">空心菜</a></li>
+										<li><a href="#">菠菜</a></li>
+										<li><a href="#">蘿蔔</a></li>
+										<li><a href="#">香菇</a></li>
+										<li><a href="#">茄子</a></li>
+										<li><a href="#">花椰菜</a></li>
+										<li><a href="#">胡蘿蔔</a></li>
+										<li><a href="#">黃瓜</a></li>
+                                        <li><a href="#">南瓜</a></li>
+										<li><a href="#">番茄</a></li>
+									</ul>
+								</div>
+							</li>
+							<li class="icon icon-arrow-left">
+								<a href="#">水果</a>
+								<div class="mp-level">
+									<h2>水果</h2>
+									<a class="mp-back" href="#">back</a>
+									<ul class="Ingredient">
+										<li><a href="#">蘋果</a></li>
+										<li><a href="#">香蕉</a></li>
+										<li><a href="#">葡萄</a></li>
+										<li><a href="#">橘子</a></li>
+										<li><a href="#">檸檬</a></li>
+										<li><a href="#">芒果</a></li>
+										<li><a href="#">西瓜</a></li>
+                                        <li><a href="#">木瓜</a></li>
+                                        <li><a href="#">草莓</a></li>
+									</ul>
+								</div>
+							</li>
+							<li class="icon icon-arrow-left">
+								<a href="#">其他配料</a>
+								<div class="mp-level">
+									<h2>其他配料</h2>
+									<a class="mp-back" href="#">back</a>
+									<ul class="Ingredient">
+										<li><a href="#">巧克力</a></li>
+										<li><a href="#">糖</a></li>
+										<li><a href="#">胡椒</a></li>
+										<li><a href="#">黑糖</a></li>
+										<li><a href="#">橄欖油</a></li>
+										<li><a href="#">豬油</a></li>
+										<li><a href="#">醋</a></li>
+                                        <li><a href="#">蛋</a></li>
+									</ul>
+								</div>
+							</li>
+							
+							<li class="icon icon-arrow-left">
+								<a href="#">乳製品</a>
+								<div class="mp-level">
+									<h2>乳製品</h2>
+									<a class="mp-back" href="#">back</a>
+									<ul class="Ingredient">
+										<li><a href="#">牛奶</a></li>
+										<li><a href="#">奶油</a></li>
+										<li><a href="#">起士</a></li>
+										<li><a href="#">優格</a></li>
+										<li><a href="#">冰淇淋</a></li>
+									</ul>
+								</div>
+							</li>
+							
+						</ul>
+							
+					</div>
+				</nav>
+				
+				
+				
+				<!-- /mp-menu -->
+
+				<div class="scroller"><!-- this is for emulating position fixed of the nav -->
+					<div class="scroller-inner">
+						<!-- Top Navigation -->
+							<div class="codrops-top clearfix">
+						<!--	<a class="codrops-icon codrops-icon-prev" href="http://tympanus.net/Tutorials/CircularNavigation/"><span>Previous Demo</span></a>
+							<span class="right"><a class="codrops-icon codrops-icon-drop" href="http://tympanus.net/codrops/?p=16252"><span>Back to the Codrops Article</span></a></span>
+				-->		</div> 
+						<header class="codrops-header">
+							
+						</header>
+						<div class="content clearfix">
+                            
+							<div class="block block-40 clearfix">
+								<p><a href="#" id="trigger" class="menu-trigger">加入食材</a></p>
+						<!--		<nav class="codrops-demos">
+									<a href="index.html">Demo 1: Overlapping levels</a>
+									<a href="index2.html">Demo 2: Covering levels</a>
+									<a class="current-demo" href="index3.html">Demo 3: Overlapping levels with back links</a> 
+									</nav>  -->
+                                <p>Here is your fridge.</p>
+								<p>Please press "加入食材"</p>
+<!--								<p>You can add anything you have</p>-->
+								<p>Don't worry, we'll take care of your food.</p>
+								<p>Start with your new life!</p>
+							</div>
+							<div class="block block-60" >
+                                
+                                <div id="UserName">Hello Guest :)</div>
+                                
+                                <div id="refrigerator"></div>
+<!--
+								<p><strong>Here is your fridge.</strong></p>
+								<p><strong>Please press "Add Ingredient"</strong></p>
+								<p><strong>You can add anything you have</strong></p>
+								<p><strong>Don't worry, we'll take care of your food.</strong></p>
+								<p><strong>Start with your new life!</strong></p>
+-->
+<!--                                google自定搜尋-->
+                                <div>
+                                <script>
+                                  (function() {
+//                                    var cx = '017594238628882870196:sqgbncmeimi';
+                                    var cx = '004612734618331306887:e8s8iujgqtm';  
+                                    var gcse = document.createElement('script');
+                                    gcse.type = 'text/javascript';
+                                    gcse.async = true;
+                                    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+                                        '//www.google.com/cse/cse.js?cx=' + cx;
+                                    var s = document.getElementsByTagName('script')[0];
+                                    s.parentNode.insertBefore(gcse, s);
+                                  })();
+                                </script>
+                                <gcse:search></gcse:search>
+                                </div>
+                                
+                                <br><br><br><br><br><br>
+                                
+							</div>
+					<!--		<div class="info">
+								<p>If you enjoyed this you might also like:</p>
+								<p><a href="http://icook.tw">iCook.tw</a></p>
+							</div> -->
+						</div>
+					</div><!-- /scroller-inner -->
+				</div><!-- /scroller -->
+
+			</div><!-- /pusher -->
+		</div><!-- /container -->
+		
+		
+		<script src="js/classie.js"></script>
+		<script src="js/mlpushmenu.js"></script>
+		<script>
+			new mlPushMenu( document.getElementById( 'mp-menu' ), document.getElementById( 'trigger' ) );
+		</script>
+		
+		<!-- responsive menu -->
+		<script>
+			
+			//  The function to change the class
+			var changeClass = function (r,className1,className2) {
+				var regex = new RegExp("(?:^|\\s+)" + className1 + "(?:\\s+|$)");
+				if( regex.test(r.className) ) {
+					r.className = r.className.replace(regex,' '+className2+' ');
+			    }
+			    else{
+					r.className = r.className.replace(new RegExp("(?:^|\\s+)" + className2 + "(?:\\s+|$)"),' '+className1+' ');
+			    }
+			    return r.className;
+			};	
+
+			//  Creating our button in JS for smaller screens
+			var menuElements = document.getElementById('menu');
+			menuElements.insertAdjacentHTML('afterBegin','<button type="button" id="menutoggle" class="navtoogle" aria-hidden="true"><i aria-hidden="true" class="icon-menu"> </i> Menu</button>');
+
+			//  Toggle the class on click to show / hide the menu
+			document.getElementById('menutoggle').onclick = function() {
+				changeClass(this, 'navtoogle active', 'navtoogle');
+			}
+
+			// http://tympanus.net/codrops/2013/05/08/responsive-retina-ready-menu/comment-page-2/#comment-438918
+			document.onclick = function(e) {
+				var mobileButton = document.getElementById('menutoggle'),
+					buttonStyle =  mobileButton.currentStyle ? mobileButton.currentStyle.display : getComputedStyle(mobileButton, null).display;
+
+				if(buttonStyle === 'block' && e.target !== mobileButton && new RegExp(' ' + 'active' + ' ').test(' ' + mobileButton.className + ' ')) {
+					changeClass(mobileButton, 'navtoogle active', 'navtoogle');
+				}
+			}
+            
+            </script>
+        
+        <script>
+            
+            //choose~~in~~box~~
+            var searchInput = "";
+//            var times = 0;
+            var myArray = [];
+            $('.Ingredient li a').click(function(){
+//                for(var i = 0; i <= time;i++){
+//                    
+//                }
+//                times++;
+                
+                
+//                myArray.push($("#refrigerator .box").html());//失敗的ＰＵＳＨ舊資料
+//                
+//                console.log("array=",myArray);
+                
+                var content = $(this).html();
+                console.log(content);//
+                
+                $('#refrigerator').append('<div class="box" value='+ content +">"+content+"</div>");
+                searchInput += content + " ";
+                
+                var date = new Date($.now());
+                searchInput += content + " ";
+
+                myArray.push( content );
+                myArray.push( date );
+                
+                $('#gsc-i-id1').val(searchInput);
+                console.log("con",searchInput);//
+                console.log("cookie:",document.cookie);//
+                
+                //获取cookie字符串 
+                var strCookie=document.cookie; 
+                var arrCookie=strCookie.split(";"); 
+                console.log("userId的值是 ",arrCookie[0]);
+                
+//                FB.getLoginStatus(function(response) {
+//                // this will be called when the roundtrip to Facebook has completed
+//                
+//                }, true);
+                
+                //parse 傳資料 update item
+                Parse.initialize("wfsQ2jK7uRpaJJjX4C3zhTvDXlzpVbkpGOrVIFdJ", "6IRXG0BIzE5ToEHOYh3HGjaXrNiU7HaG5Repvte0");
+
+				var currentuser = Parse.Object.extend("FacebookID");//include class
+				var query = new Parse.Query(currentuser);//對class做搜尋
+				query.equalTo("userID",arrCookie[0]);
+                console.log("arr=",arrCookie[0]);
+                
+//                var currentuser = Parse.Object.extend("FacebookID");//include class
+//				var query = new Parse.Query(currentuser);//對class做搜尋
+//				query.equalTo("userID","814579645218777");
+                
+				//var d = new Date(year, month, day, hours, minutes, seconds, milliseconds);
+				//query.id = "DZZVW4YIDM";
+				query.first({
+  				  success: function(object) {
+  				  	//console.log(object);
+				    object.set("ingredient", myArray.toString());
+				    object.save();
+				 },
+				  error: function(error) {
+				    alert("Error: " + error.code + " " + error.message);
+				  }
+				});
+
+				getpairinfo();
+            })
+
+		</script>
+        
+        <script>
+			function getpairinfo(){
+				Parse.initialize("wfsQ2jK7uRpaJJjX4C3zhTvDXlzpVbkpGOrVIFdJ", "6IRXG0BIzE5ToEHOYh3HGjaXrNiU7HaG5Repvte0");
+
+				var currentuser = Parse.Object.extend("FacebookID");//include class
+				var querypair = new Parse.Query(currentuser);//對class做搜尋
+				//querypair.refresh();
+				querypair.get("KtnMfQB8JL", { //objectid
+				  success: function(user) {
+				  	//user = unsynuser.fetch();
+				  	//querypair.refresh();
+				  	console.log(user.get("ingredient"));
+				  	var obj = user.get("ingredient").split(",");
+				  	for(var i=1; i<obj.length; i=i+2){
+				  		//console.log( (parseInt(obj[i],10)) );
+				  		console.log("obj" + obj[i] );
+				  	}
+				  	
+				  },
+				  error: function(object, error) {
+				  	console.log("nonono");
+				    
+				  }
+				});
+				
+			}
+		</script>
+        
+        
+<!--        Login.html-->
+        
+        <div id="LoginPage" class="LoginPageStyle" style="display:none">
+            
+            <link href="../FOOD_files/login_css.css" rel="stylesheet" type="text/css">
+    <!--     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>-->
+            <div id="fb-root"></div>
+
+            <section id="login" class="login_section">
+                <h2 class="h2_style">LOG IN</h2>
+                <form class="form_style">
+                    <img src='../FOOD_files/user_circle.png' class="icon_style">&nbsp USERNAME<input type="text" id="login_name" name="username" placeholder="Type your username"><br>
+                    <img src='../FOOD_files/lock.png' class="icon_style">PASSWORD<input type="text" id="login_pass" placeholder="Type your password">
+                </form>
+                <div id="login_link">
+                    <a><img src='../FOOD_files/question.png' class="icon_style">LOST PASSWORD?</a><br>         
+                    <a><img src='../FOOD_files/heart.png' class="icon_style">NEW ACCOUNT</a><br>
+                    <a><img src='../FOOD_files/question.png' class="icon_style">HELP</a>
+                </div>
+    <!--
+                    <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+                    </fb:login-button>
+    -->
+            <div class="buttons">
+                <button  id="fb_login" onclick="clickFBLogin()">Sign in FB</button>
+                <button  id="login_bt2" >Sign in</button>
+                <button  id="fb_logout" onclick="FacebookLogout()">Log out</button>
+        <!--        <button class="click">123</button>-->
+            </div>
+
+            </section>
+                  <!--匯入Parse SDK-->
+            <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.2.18.min.js"></script>
+            <script type="text/javascript" src="../script.js"></script>
+    <!--    <script type="text/javascript" src="./fb_prase.js"></script>-->
+
+        </div>
+        
+        
+        
+        
+        
+		 <footer>
+        <hr>
+        NCCU CS Web G9 &copy; 2014 All Rights Reserved<br><br>
+        </footer>
+        
+	</body>
+       
+</html>

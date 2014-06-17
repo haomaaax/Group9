@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<title>Responsive Retina-Friendly Menu</title>
+		<meta name="description" content="Responsive Retina-Friendly Menu with different, size-dependent layouts" />
+		<meta name="keywords" content="responsive menu, retina-ready, icon font, media queries, css3, transition, mobile" />
+		<meta name="author" content="Codrops" />
+		<link rel="shortcut icon" href="../favicon.ico"> 
+		<link rel="stylesheet" type="text/css" href="css/default.css" />
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		<script src="js/modernizr.custom.js"></script>
+        
+   <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+   <link rel="stylesheet" href="../apply/fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+   <script type="text/javascript" src="../apply/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+   
+	</head>
+    
+<script type="text/javascript">
+	$(document).ready(function() {
+	
+		$('.fancybox').fancybox({
+            padding:0, margin:0 ,background: 'none',
+    		'type': 'iframe', 
+    		'scrolling': 'no',  
+    		'iframe': {'scrolling': 'no'}
+		});	
+        
+        
+	});  
+//	$(function(){
+//	  $.scrollIt();
+//	});
+  </script>
+	<body>
+		<div class="container">	
+
+			<div class="logo">
+            <a href="../index/index.html"><img alt="logo" class="icon-logo" src="./images/logo3.jpg"></a>
+			</div>
+			<div class="main clearfix">
+				<nav id="menu" class="nav">					
+
+                    <ul>
+						<li>
+							<a href="../index/index.html">
+								<span class="icon">
+									<i aria-hidden="true" class="icon-home"></i>
+								</span>
+								<span>Home</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<span class="icon"> 
+									<i aria-hidden="true" class="icon-services"></i>
+								</span>
+								<span>Concept</span>
+							</a>
+						</li>
+						<li>
+							<a href="../team/team.html">
+								<span class="icon">
+									<i aria-hidden="true" class="icon-portfolio"></i>
+								</span>
+								<span>Our team </span>
+							</a>
+						</li>
+						<li>
+							<a href="../recipe/recipe.html">
+								<span class="icon">
+									<i aria-hidden="true" class="icon-blog"></i>
+								</span>
+								<span>My Recipe</span>
+							</a>
+						</li>
+						<li>
+							<a class="fancybox fancybox.iframe"  href="../Login.html"  >
+								<span class="icon">
+									<i aria-hidden="true" class="icon-team"></i>
+								</span>
+								<span>Log in</span>
+							</a>
+						</li>
+						<li>
+							<a href="mailto:99703028@nccu.edu.tw">
+								<span class="icon">
+									<i aria-hidden="true" class="icon-contact"></i>
+								</span>
+								<span>Contact</span>
+							</a>
+						</li>
+					</ul>
+				</nav>
+                <div class="detail">
+                <h1>創作理念</h1>
+				<p>#{Group 9 web專案} FOOD盡其用</p>
+                    </div>
+                <div>
+                    <p>現代人在購買食材後，<br>常因忘記冰箱中有什麼、<br>購買份量過多導致資源浪費。<br>故我們希望推出「FOOD盡其用」這樣的網站，<br>提供ㄧ個協助下廚者提升食材使用效率的平台。</p>
+                    </div>
+                
+                <div>
+                <p>來龍去脈</p>
+                <p>購買後放在冰箱的食材，並不會刻意去記住其有效期限，<br>若有一個可以控管食材使用期限的網站，對於無論是在食材的使用效率，<br>或是一般家庭主婦每日或每週一次冰箱整理的材料控管上，<br>會有一定程度的幫助．<br><br>
+在廚房效率不佳有幾點問題，是我們網站可以盡可能去解決的：<br>
+
+1. 現代家庭結構多為小家庭，在求飲食多樣均衡的情況下，<br>自家下廚一次使用材料的量不多，容易食材使用量上有估計錯誤，<br>而造成在吃的時候，會剩下許多東西，造成許多浪費。<br>
+
+2.在購買食材時，未計畫好每餐的用料，容易過量購買。並且忽略了同樣食材可有多種變化。<br>
+
+3.單身者下廚，容易遇到食材用不完，或是一次煮過量的問題。<br>
+
+4.食材使用效率不佳，導致資源未達最佳使用。</p>
+                <p><br>解決方案：<br>
+
+透過趣味且實用的方式，提供使用者對於手邊食材、<br>器具的管理與料理靈感。<br>並運用共享食譜、揪團吃飯等方式，<br>降低下廚的困難與成本，提升效率並強化人與人的聯結。<br><br></p>
+                </div>
+			</div>
+		</div><!-- /container -->
+		<script>
+			//  The function to change the class
+			var changeClass = function (r,className1,className2) {
+				var regex = new RegExp("(?:^|\\s+)" + className1 + "(?:\\s+|$)");
+				if( regex.test(r.className) ) {
+					r.className = r.className.replace(regex,' '+className2+' ');
+			    }
+			    else{
+					r.className = r.className.replace(new RegExp("(?:^|\\s+)" + className2 + "(?:\\s+|$)"),' '+className1+' ');
+			    }
+			    return r.className;
+			};	
+
+			//  Creating our button in JS for smaller screens
+			var menuElements = document.getElementById('menu');
+			menuElements.insertAdjacentHTML('afterBegin','<button type="button" id="menutoggle" class="navtoogle" aria-hidden="true"><i aria-hidden="true" class="icon-menu"> </i> Menu</button>');
+
+			//  Toggle the class on click to show / hide the menu
+			document.getElementById('menutoggle').onclick = function() {
+				changeClass(this, 'navtoogle active', 'navtoogle');
+			}
+
+			// http://tympanus.net/codrops/2013/05/08/responsive-retina-ready-menu/comment-page-2/#comment-438918
+			document.onclick = function(e) {
+				var mobileButton = document.getElementById('menutoggle'),
+					buttonStyle =  mobileButton.currentStyle ? mobileButton.currentStyle.display : getComputedStyle(mobileButton, null).display;
+
+				if(buttonStyle === 'block' && e.target !== mobileButton && new RegExp(' ' + 'active' + ' ').test(' ' + mobileButton.className + ' ')) {
+					changeClass(mobileButton, 'navtoogle active', 'navtoogle');
+				}
+			}
+		</script>
+            <footer>
+        <hr>
+        NCCU CS Web G9 &copy; 2014 All Rights Reserved<br><br>
+        </footer>
+	</body>
+
+</html>
