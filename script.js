@@ -257,7 +257,7 @@ function deleteAllCookies() {
 				  	}
 
                     for(var j=1;j<obj.length; j=j+2){
-                        if(obj[j] < Year+Month+Day){
+                        if(obj[j] <= Year+Month+Day){
                             console.log("Fuck yeah!")
                         }
                     }
