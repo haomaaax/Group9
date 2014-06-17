@@ -4,7 +4,7 @@ Parse.initialize("wfsQ2jK7uRpaJJjX4C3zhTvDXlzpVbkpGOrVIFdJ", "6IRXG0BIzE5ToEHOYh
 
 window.fbAsyncInit = function () {
     
-//    facebook init
+//     facebook init
 //    輸入基本的Facebook init的狀態，與Facebook 連接，包括APP ID的設定
     FB.init({
         appId      : '1422195614734097',
