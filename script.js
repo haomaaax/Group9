@@ -223,6 +223,26 @@ function deleteAllCookies() {
 
 				var currentuser = Parse.Object.extend("FacebookID");//include class
 				var querypair = new Parse.Query(currentuser);//對class做搜尋
+
+                var date = new Date($.now());
+                var month=new Array(12);
+                    month[0]="01";
+                    month[1]="02";
+                    month[2]="03";
+                    month[3]="04";
+                    month[4]="05";
+                    month[5]="06";
+                    month[6]="07";
+                    month[7]="08";
+                    month[8]="09";
+                    month[9]="10";
+                    month[10]="11";
+                    month[11]="12";
+
+                var Year = date.getFullYear();
+                var Month = month[date.getMonth()];
+                var Day = date.getDate();
+
 				//querypair.refresh();
 				querypair.get(ObjectID, { //objectid
 				  success: function(user) {
@@ -234,11 +254,16 @@ function deleteAllCookies() {
 				  		//console.log( (parseInt(obj[i],10)) );
 				  		console.log("obj" + obj[i] );
                         $('#refrigerator').append('<div class="box" value='+obj[i]+'>'+obj[i]+"</div>");
-
 				  	}
+
+                    for(var j=1;j<obj.length; j=j+2){
+                        if(obj[j] < Year+Month+Day){
+                            console.log("Fuck yeah!")
+                        }
+                    }
 				  	
 				  },
-				  error: function(error) {
+				  error: function( object ,error) {
 				  	console.log("nonono");
 				    
 				  }
