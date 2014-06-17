@@ -470,7 +470,7 @@
 				  }
 				});
 
-				getpairinfo();
+				
             })
 
 		</script>
@@ -482,7 +482,7 @@
 				var currentuser = Parse.Object.extend("FacebookID");//include class
 				var querypair = new Parse.Query(currentuser);//對class做搜尋
 				//querypair.refresh();
-				querypair.get("objectId", { //objectid
+				querypair.get("eEsz8I3bHz", { //objectid
 				  success: function(user) {
 				  	//user = unsynuser.fetch();
 				  	//querypair.refresh();
@@ -529,7 +529,7 @@
                     </fb:login-button>
     -->
             <div class="buttons">
-                <button  id="fb_login" onclick="clickFBLogin()">Sign in FB</button>
+                <button  id="fb_login" onclick="clickFBLogin()" onclick="getpairinfo()">Sign in FB</button>
                 <button  id="login_bt2" >Sign in</button>
                 <button  id="fb_logout" onclick="FacebookLogout()">Log out</button>
         <!--        <button class="click">123</button>-->
