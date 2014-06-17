@@ -406,6 +406,8 @@
                 $('#refrigerator').append('<div class="box" value='+ content +">"+content+"</div>");
                 searchInput += content + " ";
                 
+                searchInput.prefillQuery();
+
                 // Max 6/17
                 var date = new Date($.now());
                 var month=new Array(12);
