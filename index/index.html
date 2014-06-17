@@ -409,26 +409,27 @@
                 // Max 6/17
                 var date = new Date($.now());
                 var month=new Array(12);
-					month[0]="1/";
-					month[1]="2/";
-					month[2]="3/";
-					month[3]="4/";
-					month[4]="5/";
-					month[5]="6/";
-					month[6]="7/";
-					month[7]="8/";
-					month[8]="9/";
-					month[9]="10/";
-					month[10]="11/";
-					month[11]="12/";
+					month[0]="01";
+					month[1]="02";
+					month[2]="03";
+					month[3]="04";
+					month[4]="05";
+					month[5]="06";
+					month[6]="07";
+					month[7]="08";
+					month[8]="09";
+					month[9]="10";
+					month[10]="11";
+					month[11]="12";
 
+				var Year = date.getFullYear();
 				var Month = month[date.getMonth()];
 				var Day = date.getDate();
 
          //       searchInput += content + " ";
 
                 myArray.push( content );
-                myArray.push( Month+Day );//Max
+                myArray.push( Year+Month+Day );//Max
                 
                 $('#gsc-i-id1').val(searchInput);
                 console.log("con",searchInput);//

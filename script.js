@@ -234,9 +234,8 @@ function deleteAllCookies() {
 				  		//console.log( (parseInt(obj[i],10)) );
 				  		console.log("obj" + obj[i] );
                         $('#refrigerator').append('<div class="box" value='+obj[i]+'>'+obj[i]+"</div>");
-				  	}
 
-                    obj.prefillQuery();
+				  	}
 				  	
 				  },
 				  error: function(object, error) {
