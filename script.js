@@ -243,6 +243,9 @@ function deleteAllCookies() {
                 var Month = month[date.getMonth()];
                 var Day = date.getDate();
 
+                var numDate = parseInt(Year+Month+Day);
+                console.log( numDate + 1 );
+
 				//querypair.refresh();
 				querypair.get(ObjectID, { //objectid
 				  success: function(user) {
