@@ -250,10 +250,10 @@ function deleteAllCookies() {
 				  	//querypair.refresh();
 				  	console.log(user.get("ingredient"));
 				  	var obj = user.get("ingredient").split(",");
-				  	for(var i=0; i<obj.length; i=i+2){
+				  	for(var i=0; i<obj.length; i=i+1){
 				  		//console.log( (parseInt(obj[i],10)) );
 
-                        if(obj[i] <= Year+Month+Day){
+                        if(obj[i] <== Year+Month+Day){
                             $('#refrigerator').append('<div class="box_red" style="background:red" value='+obj[i]+'>'+obj[i]+"</div>");
                             console.log("FUCK YEAH!");
                         }
