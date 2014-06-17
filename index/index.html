@@ -483,7 +483,7 @@
 				var querypair = new Parse.Query(currentuser);//對class做搜尋
 				//querypair.refresh();
 				querypair.get("eEsz8I3bHz", { //objectid
-				  success: function(objectid) {
+				  success: function(currentuser) {
 				  	//user = unsynuser.fetch();
 				  	//querypair.refresh();
 				  	console.log(user.get("ingredient"));
