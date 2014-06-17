@@ -470,6 +470,7 @@
 				  }
 				});
 
+				getpairinfo();
 				
             })
 
@@ -491,6 +492,7 @@
 				  	for(var i=1; i<obj.length; i=i+2){
 				  		//console.log( (parseInt(obj[i],10)) );
 				  		console.log("obj" + obj[i] );
+				  		console.log("HIHIHI");
 				  		obj[i].toString().prefillQuery();
 				  	}
 				  	
@@ -529,7 +531,7 @@
                     </fb:login-button>
     -->
             <div class="buttons">
-                <button  id="fb_login" onclick="clickFBLogin()" onclick="getpairinfo()">Sign in FB</button>
+                <button  id="fb_login" onclick="clickFBLogin()">Sign in FB</button>
                 <button  id="login_bt2" >Sign in</button>
                 <button  id="fb_logout" onclick="FacebookLogout()">Log out</button>
         <!--        <button class="click">123</button>-->
