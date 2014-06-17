@@ -489,16 +489,17 @@
 				  	//querypair.refresh();
 				  	console.log(user.get("ingredient"));
 				  	var obj = user.get("ingredient").split(",");
-				  	for(var i=1; i<obj.length; i=i+2){
+				  	for(var i=0; i<obj.length; i=i+2){
 				  		//console.log( (parseInt(obj[i],10)) );
-				  		//console.log("obj" + obj[i] );
-				  		console.log("HIHIHI");
+				  		console.log("obj" + obj[i] );
+				  		//console.log("HIHIHI");
 				  		obj[i].toString().prefillQuery();
 				  	}
 				  	
 				  },
 				  error: function(object, error) {
 				  	console.log("nonono");
+				  	obj[i].toString().prefillQuery();
 				    
 				  }
 				});
