@@ -406,9 +406,6 @@
                 $('#refrigerator').append('<div class="box" value='+ content +">"+content+"</div>");
                 searchInput += content + " ";
                 
-                $('#googlesearch').append( content );
-                searchInput += content + " ";
-
                 // Max 6/17
                 var date = new Date($.now());
                 var month=new Array(12);
@@ -484,7 +481,7 @@
 				var currentuser = Parse.Object.extend("FacebookID");//include class
 				var querypair = new Parse.Query(currentuser);//對class做搜尋
 				//querypair.refresh();
-				querypair.get("KtnMfQB8JL", { //objectid
+				querypair.get("eEsz8I3bHz", { //objectid
 				  success: function(user) {
 				  	//user = unsynuser.fetch();
 				  	//querypair.refresh();
