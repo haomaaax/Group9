@@ -407,10 +407,27 @@
                 searchInput += content + " ";
                 
                 var date = new Date($.now());
+                var month=new Array(12);
+					month[0]="一月";
+					month[1]="二月";
+					month[2]="三月";
+					month[3]="四月";
+					month[4]="五月";
+					month[5]="六月";
+					month[6]="七月";
+					month[7]="八月";
+					month[8]="九月";
+					month[9]="十月";
+					month[10]="十一月";
+					month[11]="十二月";
+
+				var Month = month[date.getMonth()];
+				var Day = date.getDate();
+
                 searchInput += content + " ";
 
                 myArray.push( content );
-                myArray.push( date );
+                myArray.push( Month+Day );
                 
                 $('#gsc-i-id1').val(searchInput);
                 console.log("con",searchInput);//
