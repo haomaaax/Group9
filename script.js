@@ -262,8 +262,8 @@ function deleteAllCookies() {
 				  	}
 
                     for(var j=1; j<obj.length;j=j+2){
-                         if(parseInt(obj[i]) <= (parseInt(Year+Month+Day) - 7) ){
-                            $('#refrigerator').append('<div class="box_red" value='+obj[i-1]+'>'+obj[i-1]+"</div>");
+                         if(parseInt(obj[j]) <= (parseInt(Year+Month+Day) - 7) ){
+                            $('#refrigerator').append('<div class="box_red" value='+obj[j-1]+'>'+obj[j-1]+"</div>");
                             console.log("FUCK YEAH!")
                         }
                     }
