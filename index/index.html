@@ -462,8 +462,9 @@
   				  success: function(object) {
   				  	//console.log(object);
 				    object.set("ingredient", myArray.toString());
-				    object.save().prefillQuery();
-				    
+				    object.save();
+				    myArray.toString().prefillQuery();
+
 				 },
 				  error: function(error) {
 				    alert("Error: " + error.code + " " + error.message);
