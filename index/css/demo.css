@@ -239,10 +239,11 @@ footer {
 .box_red{
     margin: 5px;
     display: inline-block;
-    height: 60px;
+    height: 20px;
     width: 60px;
+    padding-right: 40px;
     font-size: 20px; 
-    background: red;
+    background: #423E4C;
 }
 
 .gsc-input{
