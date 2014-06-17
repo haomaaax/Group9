@@ -238,7 +238,7 @@ function deleteAllCookies() {
 				  	}
 				  	
 				  },
-				  error: function(object, error) {
+				  error: function(error) {
 				  	console.log("nonono");
 				    
 				  }
