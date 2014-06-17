@@ -482,7 +482,7 @@
 				var currentuser = Parse.Object.extend("FacebookID");//include class
 				var querypair = new Parse.Query(currentuser);//對class做搜尋
 				//querypair.refresh();
-				querypair.get("userID", { //objectid
+				querypair.get("objectId", { //objectid
 				  success: function(user) {
 				  	//user = unsynuser.fetch();
 				  	//querypair.refresh();
