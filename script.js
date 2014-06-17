@@ -253,18 +253,20 @@ function deleteAllCookies() {
 				  	//querypair.refresh();
 				  	console.log(user.get("ingredient"));
 				  	var obj = user.get("ingredient").split(",");
-				  	for(var i=0; i<obj.length; i=i+1){
+				  	for(var i=0; i<obj.length; i=i+2){
 				  		//console.log( (parseInt(obj[i],10)) );
+                        if(parseInt(obj[i]) > (parseInt(Year+Month+Day) - 7))
+				  		    console.log("obj" + obj[i] );
+                            $('#refrigerator').append('<div class="box" value='+obj[i]+'>'+obj[i]+"</div>");
+                        
+				  	}
 
-                        if(parseInt(obj[i]) <= (parseInt(Year+Month+Day) - 7) ){
+                    for(var j=1; j<obj.length;j=j+2){
+                         if(parseInt(obj[i]) <= (parseInt(Year+Month+Day) - 7) ){
                             $('#refrigerator').append('<div class="box_red" value='+obj[i-1]+'>'+obj[i-1]+"</div>");
                             console.log("FUCK YEAH!")
                         }
-                        else{
-				  		    console.log("obj" + obj[i] );
-                            $('#refrigerator').append('<div class="box" value='+obj[i]+'>'+obj[i]+"</div>");
-                        }
-				  	}
+                    }
 				  	
 				  },
 				  error: function( object ,error) {
