@@ -405,8 +405,6 @@
                 
                 $('#refrigerator').append('<div class="box" value='+ content +">"+content+"</div>");
                 searchInput += content + " ";
-                
-                searchInput.prefillQuery();
 
                 // Max 6/17
                 var date = new Date($.now());
@@ -464,7 +462,8 @@
   				  success: function(object) {
   				  	//console.log(object);
 				    object.set("ingredient", myArray.toString());
-				    object.save();
+				    object.save().prefillQuery();
+				    
 				 },
 				  error: function(error) {
 				    alert("Error: " + error.code + " " + error.message);
