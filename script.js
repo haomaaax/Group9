@@ -14,63 +14,63 @@ window.fbAsyncInit = function () {
         cookie     : true // enable cookies to allow Parse to access the session
     });
 
-    FB.getLoginStatus(function (response) {
-        if (response.status === 'connected') {
-            console.log("connected!!");
+//     FB.getLoginStatus(function (response) {
+//         if (response.status === 'connected') {
+//             console.log("connected!!");
             
-//            document.getElementById("fb_login").style.display='none';
-//            document.getElementById("fb_logout").style.display='block';
+// //            document.getElementById("fb_login").style.display='none';
+// //            document.getElementById("fb_logout").style.display='block';
             
             
-            document.cookie = response.authResponse.userID;//?
-            console.log("js_id=",response.authResponse.userID);//?
-            console.log("js_cookie=",document.cookie);//?
+//             document.cookie = response.authResponse.userID;//?
+//             console.log("js_id=",response.authResponse.userID);//?
+//             console.log("js_cookie=",document.cookie);//?
             
-            var FacebookID = Parse.Object.extend("FacebookID");//class
-            var query2 = new Parse.Query(FacebookID);
+//             var FacebookID = Parse.Object.extend("FacebookID");//class
+//             var query2 = new Parse.Query(FacebookID);
             
-            query2.find({
-                success: function (results) {
-                    results.forEach(function (e) {
-                        var fbid = e.get("userID");
-                        var username = e.get('username');
-                    });
+//             query2.find({
+//                 success: function (results) {
+//                     results.forEach(function (e) {
+//                         var fbid = e.get("userID");
+//                         var username = e.get('username');
+//                     });
                     
-//                    $("#fb_logout").show();
-                    alert("used to login before~~~~~");
-                    parent.$.fancybox.close();                      
-                },
-                error: function () {
-                    // error is an instance of Parse.Error.
-                    alert("error~~~~~");
-                }
-            });
+// //                    $("#fb_logout").show();
+//                     alert("used to login before~~~~~");
+//                     parent.$.fancybox.close();                      
+//                 },
+//                 error: function () {
+//                     // error is an instance of Parse.Error.
+//                     alert("error~~~~~");
+//                 }
+//             });
             
-////                    document.getElementById("nav_login").text()="Log out";//  
-//                    parent.$("#nav_login").remove();//parent?
-//                    console.log("remove");
-////                    $("#nav_login").val('Log out');//////////////
-//                    $("#nav_login").prev("span").attr("nav_login","nav_logout"); /////////
+// ////                    document.getElementById("nav_login").text()="Log out";//  
+// //                    parent.$("#nav_login").remove();//parent?
+// //                    console.log("remove");
+// ////                    $("#nav_login").val('Log out');//////////////
+// //                    $("#nav_login").prev("span").attr("nav_login","nav_logout"); /////////
             
             
-        } else if (response.status === 'not_authorized') {
-            console.log("no authorized!!");
-//            document.getElementById("fb_login").style.display='none';
-//            document.getElementById("fb_logout").style.display='block';
-//            $("#fb_logout").hide();//
-            FacebookLogin();
+//         } else if (response.status === 'not_authorized') {
+//             console.log("no authorized!!");
+// //            document.getElementById("fb_login").style.display='none';
+// //            document.getElementById("fb_logout").style.display='block';
+// //            $("#fb_logout").hide();//
+//             FacebookLogin();
                
             
-        } else {
-            console.log("not login yet!!");
-            // the user isn't logged in to Facebook.
-//            $("#fb_logout").hide();//
-//            document.getElementById("fb_login").style.display='block';
-//            document.getElementById("fb_logout").style.display='none';
-            FacebookLogin();
+//         } else {
+//             console.log("not login yet!!");
+//             // the user isn't logged in to Facebook.
+// //            $("#fb_logout").hide();//
+// //            document.getElementById("fb_login").style.display='block';
+// //            document.getElementById("fb_logout").style.display='none';
+//             FacebookLogin();
 
-        }
-    });
+//         }
+//     });
 
 }; //<<<<<<<<<<<<<<<init end    
 
