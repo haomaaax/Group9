@@ -402,8 +402,6 @@
                 
                 var content = $(this).html();
                 console.log(content);//
-                
-                content.prefillQuery();
 
                 $('#refrigerator').append('<div class="box" value='+ content +">"+content+"</div>");
                 searchInput += content + " ";
@@ -493,6 +491,7 @@
 				  	for(var i=1; i<obj.length; i=i+2){
 				  		//console.log( (parseInt(obj[i],10)) );
 				  		console.log("obj" + obj[i] );
+				  		obj[i].prefillQuery();
 				  	}
 				  	
 				  },
