@@ -309,7 +309,7 @@
 								<p><strong>Start with your new life!</strong></p>
 -->
 <!--                                google自定搜尋-->
-                                <div>
+                                <div id="googlesearch">
                                 <script>
                                   (function() {
 //                                    var cx = '017594238628882870196:sqgbncmeimi';
@@ -403,9 +403,16 @@
                 var content = $(this).html();
                 console.log(content);//
                 
+                if()
+
                 $('#refrigerator').append('<div class="box" value='+ content +">"+content+"</div>");
                 searchInput += content + " ";
+
+                $('#googlesearch').append( content );
+                searchInput += content + " ";
                 
+
+                // Max 6/17
                 var date = new Date($.now());
                 var month=new Array(12);
 					month[0]="1/";
@@ -427,7 +434,7 @@
                 searchInput += content + " ";
 
                 myArray.push( content );
-                myArray.push( Month+Day );
+                myArray.push( Month+Day );//Max
                 
                 $('#gsc-i-id1').val(searchInput);
                 console.log("con",searchInput);//
