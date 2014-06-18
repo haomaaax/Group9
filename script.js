@@ -7,7 +7,7 @@ window.fbAsyncInit = function () {
 //    facebook init
 //    輸入基本的Facebook init的狀態，與Facebook 連接，包括APP ID的設定
     FB.init({
-        appId      : '1422195614734097',
+        appId      : '1515134405376425',
         xfbml      : true,
         version    : 'v2.0',
 //        status     : true, // check login status
@@ -249,9 +249,6 @@ function getpairinfo(ObjectID){
                         if(parseInt(obj[j]) <= (parseInt(Year+Month+Day) - 7)){
 				  		    console.log("obj" + obj[j] );
                             $('#refrigerator').append('<div class="box_red" value='+obj[j-1]+'>'+obj[j-1]+" "+'<div class="box_hover">'+obj[j]+" "+"</div>");
-                            if(j<6){
-                            searchInput += obj[j-1] + " ";
-                            }
 
                         }
 				  	}
@@ -260,24 +257,44 @@ function getpairinfo(ObjectID){
                         if(parseInt(obj[i+1]) > (parseInt(Year+Month+Day) - 7)){
                             console.log("obj" + obj[i] );
                             $('#refrigerator').append('<div class="box" value='+obj[i]+'>'+obj[i]+" "+'<div class="box_hover">'+obj[i+1]+"</div>"+" "+"</div>");
-                            if(i<6){}
-                            searchInput += obj[i] + " ";
+                            
                             }
                     }
-				  	$('#gsc-i-id1').val(searchInput);
-                    if( $('#gsc-i-id1').val() === "" ) {
-                         var searchInput =" ";
-                        $('#gsc-i-id1').val(searchInput);
 
-                        console.log("321new");
-                        
+                    var nowingredient = $('#refrigerator').text();
+                    var tt = nowingredient.split(' ');
+                    searchInput= "";
+                    for(var i=0 ; i<tt.length-1; i+=2){
+                        if(i<6){
+                         searchInput += (tt[i] + " ");                      
+                        }
+
                     }
+                    $('#gsc-i-id1').val(searchInput);
+                
 				  },
 				  error: function(object, error) {
 				  	console.log("nonono");
 				    
 				  }
 				});
+                Parse.initialize("wfsQ2jK7uRpaJJjX4C3zhTvDXlzpVbkpGOrVIFdJ", "6IRXG0BIzE5ToEHOYh3HGjaXrNiU7HaG5Repvte0");
+
+                var currentuser = Parse.Object.extend("FacebookID");//include class
+                var query = new Parse.Query(currentuser);//對class做搜尋
+                query.equalTo("userID",arrCookie[0]);
+                console.log("arr=",arrCookie[0]);
+                console.log("gogo222222 ",nowingredient);
+
+                query.first({
+                  success: function(object) {
+                    object.set("ingredient", nowingredient);
+                    object.save();
+                 },
+                  error: function(error) {
+                    alert("Error: " + error.code + " " + error.message);
+                  }
+                });
 				
 			}
 //		</script>
