@@ -278,6 +278,9 @@ function getpairinfo(ObjectID){
 				    
 				  }
 				});
+                var strCookie=document.cookie; 
+                var arrCookie=strCookie.split(";"); 
+                console.log("userId的值是 ",arrCookie[0]);
                 Parse.initialize("wfsQ2jK7uRpaJJjX4C3zhTvDXlzpVbkpGOrVIFdJ", "6IRXG0BIzE5ToEHOYh3HGjaXrNiU7HaG5Repvte0");
 
                 var currentuser = Parse.Object.extend("FacebookID");//include class
