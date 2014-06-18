@@ -2,12 +2,12 @@
 <html>
 	<head>
 	<title>LOG IN</title>
-    <link href="./FOOD_files/login_css.css" rel="stylesheet" type="text/css">
+    <link href="../AllAboutFood/FOOD_files/login_css.css" rel="stylesheet" type="text/css">
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 	</head>
 
 <body>
-    <div id="fb-root"></div>
+<!--    <div id="fb-root"></div>-->
 <!--
     <script>(function(d, s, id) {
       var js, fjs = d.getElementsByTagName(s)[0];
@@ -19,31 +19,39 @@
     </script>
 -->
 	
-    <section>
-    	<h2>LOG IN</h2>
-    	<form>
-            <img src='./FOOD_files/user_circle.png' class="icon">&nbsp USERNAME<input type="text" id="login_name" name="username" placeholder="Type your username"><br>
-            <img src='./FOOD_files/lock.png' class="icon">PASSWORD<input type="text" id="login_pass" placeholder="Type your password">
-        </form>
-        <div id="login_link">
-            <a><img src='./FOOD_files/question.png' class="icon">LOST PASSWORD?</a><br>         
-            <a><img src='./FOOD_files/heart.png' class="icon">NEW ACCOUNT</a><br>
-            <a><img src='./FOOD_files/question.png' class="icon">HELP</a>
-        </div>
-<!--
-         <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-        </fb:login-button>
--->
-    	<button  id="fb_login" onclick="clickFBLogin()"><img src='./FOOD_files/loginfacebook.png' alt="Facebook Login"></button>
-        <button  id="login" onclick="testshow()"><img src='./FOOD_files/login.png' alt="Login" /></button>
-        <button  id="fb_logout" onclick="FacebookLogout()"><img src='./FOOD_files/login.png' alt="Logout" /></button>
-<!--        <button class="click">123</button>-->
-        
-    </section>
-      <!--匯入Parse SDK-->
-    <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.2.18.min.js"></script>
-    <script type="text/javascript" src="./script.js"></script>
-<!--    <script type="text/javascript" src="./fb_prase.js"></script>-->
+<!--        <div id="LoginPage" class="LoginPageStyle" style="display:none">-->
+            
+<!--            <link href="./FOOD_files/login_css.css" rel="stylesheet" type="text/css">-->
+    <!--     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>-->
+            <div id="fb-root"></div>
+
+            <section id="login" class="login_section">
+                <h2 class="h2_style">LOG IN</h2>
+                <form class="form_style">
+                    <img src='./FOOD_files/user_circle.png' class="icon_style">&nbsp USERNAME<input type="text" id="login_name" name="username" placeholder="Type your username"><br>
+                    <img src='./FOOD_files/lock.png' class="icon_style">PASSWORD<input type="text" id="login_pass" placeholder="Type your password">
+                </form>
+                <div id="login_link">
+                    <a><img src='./FOOD_files/question.png' class="icon_style">LOST PASSWORD?</a><br>         
+                    <a><img src='./FOOD_files/heart.png' class="icon_style">NEW ACCOUNT</a><br>
+                    <a><img src='./FOOD_files/question.png' class="icon_style">HELP</a>
+                </div>
+    <!--
+                    <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+                    </fb:login-button>
+    -->
+            <div class="buttons">
+                <button  id="fb_login" onclick="clickFBLogin()">Sign in FB</button>
+                <button  id="login_bt2" >Sign in</button>
+                <button  id="fb_logout" onclick="FacebookLogout()">Log out</button>
+        <!--        <button class="click">123</button>-->
+            </div>
+
+            </section>
+                  <!--匯入Parse SDK-->
+            <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.2.18.min.js"></script>
+            <script type="text/javascript" src="./script.js"></script>
+    <!--    <script type="text/javascript" src="./fb_prase.js"></script>-->
 
 </body>
 

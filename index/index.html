@@ -309,7 +309,7 @@
 								<p><strong>Start with your new life!</strong></p>
 -->
 <!--                                google自定搜尋-->
-                                <div id="googlesearch">
+                                <div>
                                 <script>
                                   (function() {
 //                                    var cx = '017594238628882870196:sqgbncmeimi';
@@ -386,7 +386,7 @@
         <script>
             
             //choose~~in~~box~~
-            var searchInput = "";
+            var searchInput = $("#gsc-i-id1").val() ;
 //            var times = 0;
             var myArray = [];
             $('.Ingredient li a').click(function(){
@@ -402,34 +402,39 @@
                 
                 var content = $(this).html();
                 console.log(content);//
-
-                $('#refrigerator').append('<div class="box" value='+ content +">"+content+"</div>");
+                
+               // $('#refrigerator').append('<div class="box" value='+ content +">"+content+"</div>");
                 searchInput += content + " ";
-
-                // Max 6/17
+                
                 var date = new Date($.now());
-                var month=new Array(12);
-					month[0]="01";
-					month[1]="02";
-					month[2]="03";
-					month[3]="04";
-					month[4]="05";
-					month[5]="06";
-					month[6]="07";
-					month[7]="08";
-					month[8]="09";
-					month[9]="10";
-					month[10]="11";
-					month[11]="12";
-
-				var Year = date.getFullYear();
-				var Month = month[date.getMonth()];
-				var Day = date.getDate();
-
-         //       searchInput += content + " ";
+                var month = new Array(12);
+                    month[0] = "01";
+                    month[1] = "02";
+                    month[2] = "03";
+                    month[3] = "04";
+                    month[4] = "05";
+                    month[5] = "06";
+                    month[6] = "07";
+                    month[7] = "08";
+                    month[8] = "09";
+                    month[9] = "10";
+                    month[10] = "11";
+                    month[11] = "12";
+                
+                var Year = date.getFullYear();
+                var Month = month[date.getMonth()];
+                var Day = date.getDate();
+                
+                var numDate = parseInt(Year+Month+Day);
+                
+                //searchInput += content + " ";
 
                 myArray.push( content );
-                myArray.push( Year+Month+Day );//Max
+                myArray.push( numDate );
+                
+                $('#refrigerator').append('<div class="box" value='+ content +">"+content+ " " +'<div class="box_hover">'+numDate+" </div>");
+                var nowingredient = $('#refrigerator').text();
+                console.log("gogo ",nowingredient);
                 
                 $('#gsc-i-id1').val(searchInput);
                 console.log("con",searchInput);//
@@ -446,7 +451,7 @@
 //                }, true);
                 
                 //parse 傳資料 update item
-                Parse.initialize("NpaoKbfksSBd1em09tzts69c38vCnM4osjENtCDw", "UkJRGQzv5cZ8VtzGF6fBblk8NFSZvwUgzqhWt836");
+                Parse.initialize("wfsQ2jK7uRpaJJjX4C3zhTvDXlzpVbkpGOrVIFdJ", "6IRXG0BIzE5ToEHOYh3HGjaXrNiU7HaG5Repvte0");
 
 				var currentuser = Parse.Object.extend("FacebookID");//include class
 				var query = new Parse.Query(currentuser);//對class做搜尋
@@ -462,10 +467,9 @@
 				query.first({
   				  success: function(object) {
   				  	//console.log(object);
-				    object.set("ingredient", myArray.toString());
-				    object.append();
+				   // object.set("ingredient", myArray.toString());
+                    object.set("ingredient", nowingredient);
 				    object.save();
-
 				 },
 				  error: function(error) {
 				    alert("Error: " + error.code + " " + error.message);
@@ -473,19 +477,18 @@
 				});
 
 				getpairinfo();
-				
             })
 
 		</script>
-<!--      
+        
         <script>
 			function getpairinfo(){
-				Parse.initialize("NpaoKbfksSBd1em09tzts69c38vCnM4osjENtCDw", "UkJRGQzv5cZ8VtzGF6fBblk8NFSZvwUgzqhWt836");
+				Parse.initialize("wfsQ2jK7uRpaJJjX4C3zhTvDXlzpVbkpGOrVIFdJ", "6IRXG0BIzE5ToEHOYh3HGjaXrNiU7HaG5Repvte0");
 
 				var currentuser = Parse.Object.extend("FacebookID");//include class
 				var querypair = new Parse.Query(currentuser);//對class做搜尋
 				//querypair.refresh();
-				querypair.get("eEsz8I3bHz", { //objectid
+				querypair.get("KtnMfQB8JL", { //objectid
 				  success: function(user) {
 				  	//user = unsynuser.fetch();
 				  	//querypair.refresh();
@@ -494,21 +497,99 @@
 				  	for(var i=1; i<obj.length; i=i+2){
 				  		//console.log( (parseInt(obj[i],10)) );
 				  		console.log("obj" + obj[i] );
-				  		//console.log("HIHIHI");
-				  		obj[i].toString().prefillQuery();
 				  	}
 				  	
 				  },
 				  error: function(object, error) {
 				  	console.log("nonono");
-				  	obj[i].toString().prefillQuery();
 				    
 				  }
 				});
 				
 			}
 		</script>
-     -->   
+        
+        <script>
+//            $(document).on("dblclick",".box",function(){    
+//        		console.log("remove!! yayayaya!!!");
+//                console.log(this);
+//        		$(this).remove();
+//        	})
+//            
+//            $(document).on("dblclick",".box_red",function(){    
+//        		console.log("remove!! yayayaya!!!");
+//                console.log(this);
+//        		$(this).remove();
+//        	})
+            
+            
+            $(document).on("dblclick",".box",function(){   
+        		var strCookie=document.cookie; 
+                var arrCookie=strCookie.split(";");  
+        		console.log("remove!! yayayaya!!!");
+                //console.log(this);
+        		$(this).remove();
+
+        		var rmingredient = $('#refrigerator').text();
+        	    console.log("rmnow1111",rmingredient);
+
+        		Parse.initialize("wfsQ2jK7uRpaJJjX4C3zhTvDXlzpVbkpGOrVIFdJ", "6IRXG0BIzE5ToEHOYh3HGjaXrNiU7HaG5Repvte0");
+
+				var currentuser1 = Parse.Object.extend("FacebookID");//include class
+				var query = new Parse.Query(currentuser1);//對class做搜尋
+
+				query.equalTo("userID",arrCookie[0]);
+                
+				console.log("rmnow==>>",rmingredient);
+
+				query.first({
+  				  success: function(object) {
+  				  	//console.log(object);
+  				  	object.set("ingredient", rmingredient);
+				    //object.set("ingredient", myArray.toString());
+				    object.save();
+				 },
+				  error: function(error) {
+				    alert("Error: " + error.code + " " + error.message);
+				  }
+				});
+            });
+            
+            $(document).on("dblclick",".box_red",function(){   
+        		var strCookie=document.cookie; 
+                var arrCookie=strCookie.split(";");  
+        		console.log("remove!! yayayaya!!!");
+                //console.log(this);
+        		$(this).remove();
+
+        		var rmingredient = $('#refrigerator').text();
+        	    console.log("rmnow1111",rmingredient);
+
+        		Parse.initialize("wfsQ2jK7uRpaJJjX4C3zhTvDXlzpVbkpGOrVIFdJ", "6IRXG0BIzE5ToEHOYh3HGjaXrNiU7HaG5Repvte0");
+
+				var currentuser1 = Parse.Object.extend("FacebookID");//include class
+				var query = new Parse.Query(currentuser1);//對class做搜尋
+
+				query.equalTo("userID",arrCookie[0]);
+                
+				console.log("rmnow==>>",rmingredient);
+
+				query.first({
+  				  success: function(object) {
+  				  	//console.log(object);
+  				  	object.set("ingredient", rmingredient);
+				    //object.set("ingredient", myArray.toString());
+				    object.save();
+				 },
+				  error: function(error) {
+				    alert("Error: " + error.code + " " + error.message);
+				  }
+				});
+            });
+        
+            
+        </script>
+        
         
 <!--        Login.html-->
         
@@ -521,7 +602,7 @@
             <section id="login" class="login_section">
                 <h2 class="h2_style">LOG IN</h2>
                 <form class="form_style">
-                    <img src='../FOOD_files/user_circle.png' class="icon_style">USERNAME<input type="text" id="login_name" name="username" placeholder="Type your username"><br>
+                    <img src='../FOOD_files/user_circle.png' class="icon_style">&nbsp USERNAME<input type="text" id="login_name" name="username" placeholder="Type your username"><br>
                     <img src='../FOOD_files/lock.png' class="icon_style">PASSWORD<input type="text" id="login_pass" placeholder="Type your password">
                 </form>
                 <div id="login_link">
@@ -548,7 +629,87 @@
 
         </div>
         
-        
+        <script>
+//        	$('#login_bt2').click(function(){
+//        		Parse.initialize("wfsQ2jK7uRpaJJjX4C3zhTvDXlzpVbkpGOrVIFdJ", "6IRXG0BIzE5ToEHOYh3HGjaXrNiU7HaG5Repvte0");
+//
+//				var currentuser = Parse.Object.extend("FacebookID");//include class
+//				var query = new Parse.Query(currentuser);//對class做搜尋
+//				query.set("userID", $("#login_pass").val() );
+//				query.set("Username", $("#login_name").val() );
+//			
+//        	console.log("haha");
+//        	});
+            
+            
+        	$('#login_bt2').click(function(){
+        		console.log("haha1");
+        		Parse.initialize("wfsQ2jK7uRpaJJjX4C3zhTvDXlzpVbkpGOrVIFdJ", "6IRXG0BIzE5ToEHOYh3HGjaXrNiU7HaG5Repvte0");
+
+				var currentuser = Parse.Object.extend("FacebookID");//include class
+				var queryuser = new Parse.Query(currentuser);
+				queryuser.equalTo("userID", $("#login_pass").val() )
+				queryuser.find({
+                          success: function(results) {
+                              console.log("results.length",results.length);
+                               if (results.length === 0){//沒有資料回傳
+//                                 var facebookID = new FacebookID();//不用自己手動建class
+//                                 facebookID.set("username",userName);
+//                                 facebookID.set("userID",userID);
+//                                 facebookID.save();
+                                   var myuser = new currentuser();//對class做搜尋
+							       console.log("haha2");
+							       myuser.set("userID", $("#login_pass").val() );
+                                   myuser.set("username", $("#login_name").val() );
+                                   myuser.save(null, {
+                                   success: function(query) {
+                                        document.cookie= $("#login_pass").val();
+                                        $("#UserName").empty();
+                                        $("#UserName").append("Hi~ "+ $("#login_name").val());//append User Name
+                                        console.log("ok");
+                                        $("#login_pass").val("");
+                                        $("#login_name").val("");
+                                      },
+                                      error: function(query, error) {
+                                        console.log("not ok");
+                                      }
+                                   });
+
+                                   setTimeout(function () {
+                                   $.fancybox.close();
+                                   }, 1000);
+
+                                    console.log("haha3");
+                               }
+                               else{
+//                                 console.log("results=",results[0].id);  
+// //                                console.log("results=",results);
+//                                 getpairinfo(results[0].id);
+                                   document.cookie= $("#login_pass").val();
+                                   console.log("login~id=",$("#login_pass").val());
+                              
+                                   $("#UserName").empty();
+                                   $("#UserName").append("Hi~ "+$("#login_name").val());//append User Name
+                                   
+                                   $("#login_pass").val("");
+			    			       $("#login_name").val("");
+                                   getpairinfo(results[0].id);
+                                   setTimeout(function () {
+                                     $.fancybox.close();
+                                   }, 1000);
+                              }
+                              
+                                console.log("haha3");                   
+                          }, 
+                          error: function(error) {
+                          	alert("Error: " + error.code + " " + error.message);
+			        	}
+			    });
+           });
+				
+       
+            
+        </script>
         
         
         
