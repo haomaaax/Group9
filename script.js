@@ -271,6 +271,26 @@ function getpairinfo(ObjectID){
 
                     }
                     $('#gsc-i-id1').val(searchInput);
+                    var strCookie=document.cookie; 
+                    var arrCookie=strCookie.split(";"); 
+                    console.log("userId的值是 ",arrCookie[0]);
+                    Parse.initialize("wfsQ2jK7uRpaJJjX4C3zhTvDXlzpVbkpGOrVIFdJ", "6IRXG0BIzE5ToEHOYh3HGjaXrNiU7HaG5Repvte0");
+
+                    var currentuser = Parse.Object.extend("FacebookID");//include class
+                    var query = new Parse.Query(currentuser);//對class做搜尋
+                    query.equalTo("userID",arrCookie[0]);
+                    console.log("arr=",arrCookie[0]);
+                    console.log("gogo222222 ",nowingredient);
+
+                    query.first({
+                      success: function(object) {
+                        object.set("ingredient", nowingredient);
+                        object.save();
+                     },
+                      error: function(error) {
+                        alert("Error: " + error.code + " " + error.message);
+                      }
+                    });
                 
 				  },
 				  error: function(object, error) {
@@ -278,26 +298,8 @@ function getpairinfo(ObjectID){
 				    
 				  }
 				});
-                var strCookie=document.cookie; 
-                var arrCookie=strCookie.split(";"); 
-                console.log("userId的值是 ",arrCookie[0]);
-                Parse.initialize("wfsQ2jK7uRpaJJjX4C3zhTvDXlzpVbkpGOrVIFdJ", "6IRXG0BIzE5ToEHOYh3HGjaXrNiU7HaG5Repvte0");
-
-                var currentuser = Parse.Object.extend("FacebookID");//include class
-                var query = new Parse.Query(currentuser);//對class做搜尋
-                query.equalTo("userID",arrCookie[0]);
-                console.log("arr=",arrCookie[0]);
-                console.log("gogo222222 ",nowingredient);
-
-                query.first({
-                  success: function(object) {
-                    object.set("ingredient", nowingredient);
-                    object.save();
-                 },
-                  error: function(error) {
-                    alert("Error: " + error.code + " " + error.message);
-                  }
-                });
+                    
+                
 				
 			}
 //		</script>
