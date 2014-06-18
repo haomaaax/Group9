@@ -386,25 +386,34 @@
         <script>
             
             //choose~~in~~box~~
-            var searchInput = $("#gsc-i-id1").val() ;
+            /*
+    		if( $("#gsc-i-id1").val() ){
+    			var searchInput = $("#gsc-i-id1").val();
+    			console.log("12333");
+    		}else{
+            
+				var searchInput =" ";
+            	console.log("32111");
+            }*/
+            //var searchInput = $('#refrigerator').text() ;
+           
 //            var times = 0;
             var myArray = [];
             $('.Ingredient li a').click(function(){
+            	  //searchInput = $('#refrigerator').text() ;
 //                for(var i = 0; i <= time;i++){
 //                    
 //                }
 //                times++;
-                
+                  
                 
 //                myArray.push($("#refrigerator .box").html());//失敗的ＰＵＳＨ舊資料
 //                
 //                console.log("array=",myArray);
                 
                 var content = $(this).html();
-                console.log(content);//
-                
-               // $('#refrigerator').append('<div class="box" value='+ content +">"+content+"</div>");
-                searchInput += content + " ";
+
+    
                 
                 var date = new Date($.now());
                 var month = new Array(12);
@@ -435,10 +444,26 @@
                 $('#refrigerator').append('<div class="box" value='+ content +">"+content+ " " +'<div class="box_hover">'+numDate+" </div>");
                 var nowingredient = $('#refrigerator').text();
                 console.log("gogo ",nowingredient);
-                
+                /*
+                var tmp = searchInput.split(' ');
+                console.log("tmp",tmp);
+                console.log("length",tmp.length);
+                if(searchInput.split(' ').length <= (3+2) ){
+                	$('#gsc-i-id1').val(searchInput);
+                }
+                */
+                var tt = nowingredient.split(' ');
+                searchInput= "";
+                for(var i=0 ; i<tt.length-1; i+=2){
+                	if(i<6){
+                	 searchInput += (tt[i] + " ");                		
+                	}
+
+                }
                 $('#gsc-i-id1').val(searchInput);
-                console.log("con",searchInput);//
-                console.log("cookie:",document.cookie);//
+                console.log("search=>",$('#gsc-i-id1').val());
+                //console.log("con",searchInput);//
+                //console.log("cookie:",document.cookie);//
                 
                 //获取cookie字符串 
                 var strCookie=document.cookie; 
@@ -457,7 +482,7 @@
 				var query = new Parse.Query(currentuser);//對class做搜尋
 				query.equalTo("userID",arrCookie[0]);
                 console.log("arr=",arrCookie[0]);
-                
+                console.log("gogo222222 ",nowingredient);
 //                var currentuser = Parse.Object.extend("FacebookID");//include class
 //				var query = new Parse.Query(currentuser);//對class做搜尋
 //				query.equalTo("userID","814579645218777");
@@ -480,7 +505,7 @@
             })
 
 		</script>
-        
+
         <script>
 			function getpairinfo(){
 				Parse.initialize("wfsQ2jK7uRpaJJjX4C3zhTvDXlzpVbkpGOrVIFdJ", "6IRXG0BIzE5ToEHOYh3HGjaXrNiU7HaG5Repvte0");
@@ -644,6 +669,7 @@
             
         	$('#login_bt2').click(function(){
         		console.log("haha1");
+
         		Parse.initialize("wfsQ2jK7uRpaJJjX4C3zhTvDXlzpVbkpGOrVIFdJ", "6IRXG0BIzE5ToEHOYh3HGjaXrNiU7HaG5Repvte0");
 
 				var currentuser = Parse.Object.extend("FacebookID");//include class

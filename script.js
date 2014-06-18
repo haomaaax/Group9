@@ -7,7 +7,7 @@ window.fbAsyncInit = function () {
 //    facebook init
 //    輸入基本的Facebook init的狀態，與Facebook 連接，包括APP ID的設定
     FB.init({
-        appId      : '1422195614734097',
+        appId      : '1515134405376425',
         xfbml      : true,
         version    : 'v2.0',
 //        status     : true, // check login status
@@ -16,13 +16,7 @@ window.fbAsyncInit = function () {
 
     FB.getLoginStatus(function(response){
      if (response.status === 'connected'){
-         console.log("connected!! in init");
-         //
-//         document.getElementById("fb_login").style.display='none';
-//         document.getElementById("login_bt2").style.display='none';
-//         document.getElementById("fb_logout").style.display='show';
-//         console.log("show~~~~");
-         //
+     console.log("connected!! in init");
          if (response.authResponse) {
             FB.api('/me', function (response){
                 var userName = response.name;   
@@ -61,18 +55,10 @@ window.fbAsyncInit = function () {
         }
 
      }else if (response.status === 'not_authorized'){
-        console.log("this user is not authorizied your apps in init");
-//        document.getElementById("fb_login").style.display='show';
-//        document.getElementById("login_bt2").style.display='show'; 
-//        document.getElementById("fb_logout").style.display='none';
-//        console.log("hide1~~~~");         
+           console.log("this user is not authorizied your apps in init");
 
      }else{
-        console.log("not login in init"); 
-//        document.getElementById("fb_login").style.display='show'; 
-//        document.getElementById("login_bt2").style.display='show'; 
-//        document.getElementById("fb_logout").style.display='none';
-//        console.log("hide2~~~~");  
+      console.log("not login in init");   
      }
     });
 }; //<<<<<<<<<<<<<<<init end    
@@ -249,7 +235,7 @@ function getpairinfo(ObjectID){
                 var Day = date.getDate();
                 
                 var numDate = parseInt(Year+Month+Day);
-                var searchInput = "";
+                var  searchInput= "";
 				querypair.get(ObjectID, { //objectid
 				  success: function(user) {
 				  	//user = unsynuser.fetch();
@@ -263,8 +249,10 @@ function getpairinfo(ObjectID){
                         if(parseInt(obj[j]) <= (parseInt(Year+Month+Day) - 7)){
 				  		    console.log("obj" + obj[j] );
                             $('#refrigerator').append('<div class="box_red" value='+obj[j-1]+'>'+obj[j-1]+" "+'<div class="box_hover">'+obj[j]+" "+"</div>");
+                            if(j<6){
                             searchInput += obj[j-1] + " ";
-                            
+                            }
+
                         }
 				  	}
                       
@@ -272,11 +260,18 @@ function getpairinfo(ObjectID){
                         if(parseInt(obj[i+1]) > (parseInt(Year+Month+Day) - 7)){
                             console.log("obj" + obj[i] );
                             $('#refrigerator').append('<div class="box" value='+obj[i]+'>'+obj[i]+" "+'<div class="box_hover">'+obj[i+1]+"</div>"+" "+"</div>");
+                            if(i<6){}
                             searchInput += obj[i] + " ";
-                        }
-				  	}
+                            }
+                    }
 				  	$('#gsc-i-id1').val(searchInput);
-                      
+                    if( $('#gsc-i-id1').val() === "" ) {
+                         var searchInput =" ";
+                        $('#gsc-i-id1').val(searchInput);
+
+                        console.log("321new");
+                        
+                    }
 				  },
 				  error: function(object, error) {
 				  	console.log("nonono");
